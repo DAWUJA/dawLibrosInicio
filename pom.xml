@@ -12,9 +12,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.target>17</maven.compiler.target>
-        <maven.compiler.source>17</maven.compiler.source>
-        <junit.version>5.9.1</junit.version>
+        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
     </properties>
 
     <dependencies>
@@ -24,25 +23,12 @@
             <version>10.0.0</version>
             <scope>provided</scope>
         </dependency>
-        <!-- Required for IntelliJ 2022.3 JSTL tags autocomplete bug -->
+        <!-- Required for IntelliJ 2024.3 JSTL tags autocomplete bug -->
         <dependency>
             <groupId>org.glassfish.web</groupId>
             <artifactId>jakarta.servlet.jsp.jstl</artifactId>
             <version>3.0.1</version>
             <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -52,7 +38,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>3.4.0</version>
             </plugin>
         </plugins>
     </build>
