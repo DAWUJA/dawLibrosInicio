@@ -4,9 +4,13 @@ import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 @WebServlet("/libros")
 public class LibrosServlet extends HttpServlet {
+
+    private static Logger logger=Logger.getLogger(LibrosServlet.class.getName());
+
     private String message;
 
     public void init() {
@@ -25,7 +29,7 @@ public class LibrosServlet extends HttpServlet {
                 </body></html>
                 """.formatted(message);
         out.println(html);
-
+        logger.info( "Petición GET desde %s".formatted(request.getRemoteAddr()) );
     }
 
     @Override
@@ -40,7 +44,8 @@ public class LibrosServlet extends HttpServlet {
                 <div>ISBN: %s </div>
             </body></html>
         """.formatted(titulo, isbn);
-        response.getWriter().println(html);	    }
+        response.getWriter().println(html);
+        logger.info( "Alta de libro %s con ISBN %s".formatted(titulo,isbn) ); }
 
     public void destroy() {
     }
