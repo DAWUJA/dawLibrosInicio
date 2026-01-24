@@ -34,6 +34,8 @@ public class LibrosServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.setContentType("text/html");
+
         String titulo = request.getParameter("titulo");
         String isbn = request.getParameter("isbn");
 
